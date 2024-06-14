@@ -2,9 +2,18 @@
 import MenuItem from "./MenuItem";
 
 function MenuList({ foodItems }) {
-  console.log(foodItems);
   return (
-    <>{/*render a MenuItem component to each element of the props array*/}</>
+    <>
+      {/* Si on n'est pas encore à l'aise avec les méthodes de tableau */}
+      {/* <MenuItem item={foodItems[0]} />
+      <MenuItem item={foodItems[1]} />
+      <MenuItem item={foodItems[2]} />
+      <MenuItem item={foodItems[3]} /> */}
+
+      {foodItems.map((item, i) => (
+        <MenuItem key={i} item={item} />
+      ))}
+    </>
   );
 }
 
